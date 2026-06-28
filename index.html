@@ -9,13 +9,19 @@
     <meta property="og:description" content="Muziek eerst.">
     <meta property="og:type" content="website">
     <link rel="icon" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
     <style>
       :root {
-        color-scheme: light;
-        --paper: #f7f3e8;
-        --ink: #171717;
-        --groove: #2a2927;
-        --label: #df352f;
+        color-scheme: dark;
+        --bg: #100418;
+        --bg-dim: #1E0A30;
+        --bg-lift: #2A0C3A;
+        --night: #08020F;
+        --ink: #FFF4E8;
+        --coral: #FF2D87;
+        --uv: #9B5CFF;
       }
 
       * {
@@ -31,9 +37,9 @@
 
       body {
         overflow: hidden;
-        background: var(--paper);
+        background: var(--bg);
         color: var(--ink);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: "Bricolage Grotesque", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
 
       .record-wall {
@@ -42,12 +48,12 @@
         place-items: center;
         position: relative;
         isolation: isolate;
-        background-color: var(--paper);
+        background-color: var(--bg);
         background-image:
-          radial-gradient(circle, var(--label) 0 18%, transparent 19%),
-          repeating-radial-gradient(circle, var(--ink) 0 9%, var(--groove) 10% 14%),
-          radial-gradient(circle, transparent 0 67%, rgba(247, 243, 232, 0.42) 68% 70%, transparent 71%),
-          radial-gradient(circle, rgba(0, 0, 0, 0.18) 0 68%, transparent 69%);
+          radial-gradient(circle, var(--coral) 0 18%, transparent 19%),
+          repeating-radial-gradient(circle, var(--night) 0 9%, var(--bg-dim) 10% 14%),
+          radial-gradient(circle, transparent 0 67%, rgba(255, 244, 232, 0.13) 68% 70%, transparent 71%),
+          radial-gradient(circle, rgba(155, 92, 255, 0.2) 0 68%, transparent 69%);
         background-size: 1.5cm 1.5cm;
         background-position: 0 0, 0 0, 0 0, 0.05cm 0.05cm;
       }
@@ -58,23 +64,25 @@
         inset: 0;
         z-index: -1;
         background:
-          linear-gradient(90deg, rgba(247, 243, 232, 0.16), transparent 18% 82%, rgba(247, 243, 232, 0.16)),
-          linear-gradient(180deg, rgba(247, 243, 232, 0.18), transparent 22% 78%, rgba(247, 243, 232, 0.18));
+          radial-gradient(circle at center, rgba(255, 45, 135, 0.18), transparent 34%),
+          linear-gradient(90deg, rgba(8, 2, 15, 0.2), transparent 18% 82%, rgba(8, 2, 15, 0.2)),
+          linear-gradient(180deg, rgba(8, 2, 15, 0.18), transparent 22% 78%, rgba(8, 2, 15, 0.18));
       }
 
       h1 {
         margin: 0;
-        color: var(--paper);
+        color: var(--ink);
         font-size: clamp(3rem, 9vw, 8rem);
+        font-weight: 800;
         line-height: 0.9;
         letter-spacing: 0;
         text-align: center;
         text-transform: none;
         text-shadow:
-          0 0.035em 0 var(--ink),
-          0.035em 0.035em 0 var(--ink),
-          -0.035em 0.035em 0 var(--ink),
-          0.065em 0.065em 0 rgba(0, 0, 0, 0.28);
+          0 0.035em 0 var(--night),
+          0.035em 0.035em 0 var(--coral),
+          -0.035em 0.035em 0 var(--uv),
+          0 0 0.42em rgba(255, 45, 135, 0.34);
       }
 
       @media (max-width: 520px) {
